@@ -1,0 +1,28 @@
+body {
+    background-color: #fad390;   
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #fa983a;
+    height: 100vh;
+    text-align: center;
+    padding-top: 10px;
+}
+
+main {
+    width: 100%;
+    background-color: #b8e994;
+    height: 100vh;
+    text-align: center;
+
+}
+
+footer {
+    width: 100%;
+    background-color: #0c2461;
+    text-align: center;
+    color: #ffffff;
+    height: 100vh;
+}
