@@ -1,5 +1,5 @@
 body {
-    background-color: #fad390;   
+    background-color: #ffffff;   
     width: 100%;
 }
 
@@ -8,10 +8,10 @@ header {
     background-color: #fa983a;
     height: 100vh;
     text-align: center;
-    padding-top: 10px;
 }
 
 main {
+    padding-top: 50px;
     width: 100%;
     background-color: #b8e994;
     height: 100vh;
