@@ -37,14 +37,15 @@
     <main>
         <div class="container">
             <div class="row">
-              <% for ( var i = 0; i < data.length; i++ ) { %>
+             
+              <% for ( var i = data.length; i > 0; i-- ) { %>  
                 <div class="col-sm">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="<%= data[i].img%>" alt="Card image cap">
+                        <img class="card-img-top" src="<%= data[i-1].img%>" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title"><%= data[i].name%></h5>
-                          <p class="card-text"><%= data[i].text%></p>
-                          <a href="<%= data[i].hrefBut%>" class="btn btn-primary"><%= data[i].nameBut%></a>
+                          <h5 class="card-title"><%= data[i-1].name%></h5>
+                          <p class="card-text"><%= data[i-1].text%></p>
+                          <a href="<%= data[i-1].hrefBut%>" class="btn btn-primary"><%= data[i-1].nameBut%></a>
                         </div>
                       </div>
                 </div>
