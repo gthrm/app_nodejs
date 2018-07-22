@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NewMain</title>
+</head>
+<body>
+    <h1>Добавим новый Маин</h1>
+    <hr>
+    <form action="/write" method="POST"><br>
+        <label for="name">Наименование</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label for="text">Текст</label><br>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea><br>
+        <label for="nameBut">Название кнопки</label><br>
+        <input type="text" name="nameBut" id="nameBut" value="Подробнее"><br>
+        <label for="hrefBut">Ссылка для кнопку</label><br>
+        <input type="text" name="hrefBut" id="hrefBut" value="#"><br>
+        <label for="img">Ссылка на картинку</label><br>
+        <input type="text" name="img" id="img" value="../img/no_image.png"><br>
+        <button>Send</button>
+    </form>
+</body>
+</html>
