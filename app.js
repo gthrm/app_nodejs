@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const models = require('./mainSchema')(mongoose);
 const bodyParser = require('body-parser');
+const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 
 app.use( bodyParser.urlencoded( {extended: true } ) );
 app.use( bodyParser.json() );
@@ -12,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get ('/', function(req, res){
-    mongoose.connect('mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail');
+    mongoose.connect(dbSite);
 
     models.MainModel.find(function(err, data){
         if (err) throw err;
@@ -24,7 +25,7 @@ app.get ('/', function(req, res){
 
 //Создание пользователя
 // app.get('/userCreate', function(req, res){
-//     mongoose.connect('mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail', function(err, noerr){
+//     mongoose.connect(dbSite, function(err, noerr){
 //         if (err) throw err;
 //         let newUser = new models.UserModel ({
 //         });
@@ -49,7 +50,7 @@ app.post('/user', function(req, res){
     let username = req.body.username;
     let password = req.body.password;
 
-    mongoose.connect('mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail', function(err, noerr){
+    mongoose.connect(dbSite, function(err, noerr){
         if (err) throw err;
         models.UserModel.find(function(err, data){
             if (err) throw err;
@@ -71,7 +72,7 @@ app.post('/write', function(req, res){
     let nameBut = req.body.nameBut;
     let hrefBut = req.body.hrefBut;
 
-    mongoose.connect('mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail', function(err, noerr){
+    mongoose.connect(dbSite, function(err, noerr){
         if (err) throw err;
         let newMain = new models.MainModel ({
             img: img,
@@ -93,7 +94,7 @@ app.post('/write', function(req, res){
 
 // app.get ('/write', function(req, res){
 
-//     mongoose.connect('mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail', function(err, noerr){
+//     mongoose.connect(dbSite, function(err, noerr){
 //         if (err) throw err;
 //         let newMain = new models.MainModel ({
 //             img: '../img/no_image.png',
