@@ -52,6 +52,30 @@
               <% } %>
             </div>
         </div>
+        <div class="container">
+          <form name="person">
+            <div id="kolonka1">
+                <input type="text" class="inputText" name="username" id="username" placeholder="Петрова Александра Ивановна">
+                <input type="date" class="inputText" name="theDate" id="theDate">
+            </div>  
+
+            <div id="kolonka2">
+                <input type="tel" class="inputText" name="tel" id="tel" placeholder="+7 (999) 999-99-00">
+                <input type="city" class="inputText" name="inst" id="inst" placeholder="instagram.com/user / vk.com.user">
+            </div>
+
+            <input type="text" class="inputText" name="message" id="message" placeholder="Комментарий">
+        
+            <div class="reqbottom">
+                <div class="recap">
+                    <div class="g-recaptcha" data-sitekey="6LdgXWcUAAAAADq4vGIGSg5e2iOBqV6ANDosKiad"></div>
+                </div>
+                <div class="send">
+                    <input id="send" type="button" value="Записаться" name="sub_but">
+                    <h1 id="rules">Нажимая кнопку “Записаться”, вы даёте согласие на обработку своих персональных данных</h1>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <h1 class="display-2">footer</h1>
@@ -60,6 +84,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?157"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/date.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- VK Widget -->
     <div class="visible-desktop" id="vk_community_messages"></div>

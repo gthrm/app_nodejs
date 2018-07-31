@@ -5,6 +5,7 @@ const path = require('path');
 const models = require('./mainSchema')(mongoose);
 const bodyParser = require('body-parser');
 const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
+const request = require('request');
 
 app.use( bodyParser.urlencoded( {extended: true } ) );
 app.use( bodyParser.json() );
@@ -21,6 +22,11 @@ app.get ('/', function(req, res){
         res.render('index.ejs', {data: data});
     });
     
+});
+
+app.post ('/data', function(req, res){
+    console.log(req);
+    res.send('Вот что пришло: '+ req);
 });
 
 //Создание пользователя
