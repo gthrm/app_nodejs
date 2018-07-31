@@ -24,9 +24,51 @@ app.get ('/', function(req, res){
     
 });
 
-app.post ('/data', function(req, res){
-    console.log(req);
-    res.send('Вот что пришло: '+ req);
+app.post ('/capcha', function(req, res){
+
+    let capcha = req.body.capcha; // капча
+
+    //*** */
+    const url = 'https://www.google.com/recaptcha/api/siteverify';
+    const secret = '6LdgXWcUAAAAAAFhwAaJWKKFKT2ttcaEaMXqFwxB';
+    let answer = '';
+    let gRecaptchaResponse = capcha;
+    request({
+       method: 'POST',
+       url: url,
+       qs: {
+            secret: secret, 
+            response: gRecaptchaResponse 
+       }
+      }, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body);
+        console.log(typeof body);
+        answer = JSON.parse(body);
+        console.log('*******************');
+        console.log(typeof answer);
+        console.log(answer.success);
+        console.log('*******************');
+        // валидация и 
+        // обработка полученного ответа, заголовков
+        res.send(answer.success);
+      }
+    });
+    //*** */
+
+    
+});
+
+app.post('/data', function(req, res){
+    let username = req.body.username;
+    let theDate = req.body.theDate;
+    let tel = req.body.tel;
+    let inst = req.body.inst;
+    let message = req.body.message;
+
+    console.log(username, theDate, tel, inst, message);
+
+    res.send('Данные получены');
 });
 
 //Создание пользователя
