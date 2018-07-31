@@ -12,10 +12,19 @@ module.exports = function(mongoose) {
         password: { type: String, default: 'admin123' },
     } );
 
+    let ClientSchema = new mongoose.Schema( {
+        username: { type: String, default: 'client' },
+        theDate: { type: Date },
+        tel: { type: String, default: 'tel' },
+        inst: { type: String, default: 'inst' },
+        message: { type: String, default: 'Комментарий' },
+    } );
+
 
     let models = {
         MainModel: mongoose.model('mains', MainSchema),
         UserModel: mongoose.model('users', UserSchema),
+        ClientModel: mongoose.model('clients', ClientSchema),
     };
     return models;
 };

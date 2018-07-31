@@ -15,22 +15,58 @@ send.onclick = function send() {
 
     } else {
         let captcha = grecaptcha.getResponse();
-        // if (captcha.length == ""){
-        //     // alert('Пройдите капчу!');
-        //     swal ( "Ой" ,  "Ты не робот? Пройди капчу! ;)" ,  "error" );
-        //     return false;
-        // }
+        if (captcha.length == ""){
+            // alert('Пройдите капчу!');
+            swal ( "Ой" ,  "Ты не робот? Пройди капчу! ;)" ,  "error" );
+            return false;
+        }
         let xhr = new XMLHttpRequest();
 
-        let body = JSON.stringify({ 'capcha': captcha }) ; //'username': username.value, 'theDate': theDate.value, 'tel': tel, 'inst': inst, 'message': message,
+        let body = JSON.stringify({ 'capcha': captcha }) ; //,
         
         xhr.open("POST", '/capcha', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         
         xhr.onreadystatechange = function(){
-            console.log(xhr.response);
+            if (xhr.response == 'true') {
+                sendData(xhr.response);
+                console.log('А сейчас');
+                xhr.abort();
+                swal ( "Спасибо!" ,  "Данные отправлены, скоро с Вами свяжется мастер ;)" ,  "success" );
+                username.value = '';
+                theDate.value = '';
+                tel.value = '';
+                inst.value = '';
+                message.value = '';
+                return false;
+            } else {
+                console.log('Не сейчас');
+            }
+            
         };
         
         xhr.send(body);
+        return false;
+    };
+
+};
+
+function sendData(param){
+    console.log('Тип param '+typeof param, 'Значение '+param);
+    if (param == 'true'){
+        let HttpRequest = new XMLHttpRequest();
+        let bodyReq = JSON.stringify( {'username': username.value, 'theDate': theDate.value, 'tel': tel.value, 'inst': inst.value, 'message': message.value} );
+        HttpRequest.open('POST', '/data', true);
+        HttpRequest.setRequestHeader('Content-Type', 'application/json');
+
+        HttpRequest.onreadystatechange = function(){
+            console.log(HttpRequest.response);
+        };
+
+        HttpRequest.send(bodyReq);
+
+        
+    } else {
+        console.log('что-то не так');
     };
 };

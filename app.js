@@ -42,13 +42,13 @@ app.post ('/capcha', function(req, res){
        }
       }, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log(body);
-        console.log(typeof body);
+        // console.log(body);
+        // console.log(typeof body);
         answer = JSON.parse(body);
-        console.log('*******************');
-        console.log(typeof answer);
-        console.log(answer.success);
-        console.log('*******************');
+        // console.log('*******************');
+        // console.log(typeof answer);
+        // console.log(answer.success);
+        // console.log('*******************');
         // валидация и 
         // обработка полученного ответа, заголовков
         res.send(answer.success);
@@ -68,7 +68,24 @@ app.post('/data', function(req, res){
 
     console.log(username, theDate, tel, inst, message);
 
-    res.send('Данные получены');
+    mongoose.connect(dbSite, function(err, noerr){
+        if (err) throw err;
+        let newClient = new models.ClientModel ({
+            username: username,
+            theDate: theDate,
+            tel: tel,
+            inst: inst,
+            message: message,
+        });
+        newClient.save(function(err, newClient){
+            if (err) {
+                console.log("Что-то не так с документом " + newClient.username);
+            } else {
+                console.log(newClient.username + ' сохранен.');
+            }
+        });
+    });
+    res.send('Данные получены: ' + username+' '+ theDate+' ' + tel + ' '+ inst + ' '+ message);
 });
 
 //Создание пользователя

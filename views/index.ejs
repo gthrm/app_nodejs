@@ -52,15 +52,16 @@
               <% } %>
             </div>
         </div>
+
         <div class="container">
 
             <form>
-                <input type="text" class="inputText" name="username" id="username" placeholder="Петрова Александра Ивановна">
-                <input type="date" class="inputText" name="theDate" id="theDate">
-                <input type="tel" class="inputText" name="tel" id="tel" placeholder="+7 (999) 999-99-00">
-                <input type="text" class="inputText" name="inst" id="inst" placeholder="instagram.com/user / vk.com.user">
-                <input type="text" class="inputText" name="message" id="message" placeholder="Комментарий">
-                <input type="button" id="send"  value="Записаться" name="sub_but">
+                <input type="text" class="inputText" name="username" id="username" placeholder="Петрова Александра Ивановна" />
+                <input type="date" class="inputText" name="theDate" id="theDate" />
+                <input type="tel" class="inputText" name="tel" id="tel"   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="+7 (999) 999-99-00" />
+                <input type="text" class="inputText" name="inst" id="inst" placeholder="instagram.com/user / vk.com.user" />
+                <input type="text" class="inputText" name="message" id="message" placeholder="Комментарий" />
+                <input type="button" id="send"  value="Записаться" name="sub_but" />
             </form>
             
             <div class="recap">
