@@ -1,5 +1,5 @@
 body {
-    background-color: #F5F7F9;   
+    background-color: #ffffff;   
     width: 100%;
 }
 
@@ -9,8 +9,8 @@ body {
 
 header {
     width: 100%;
-    background-color: #fa983a;
-    min-height: 100vh;
+    background-color: #c4cfe3;
+    /* min-height: 100vh; */
     text-align: center;
 }
 
@@ -18,7 +18,7 @@ main {
     padding-top: 50px;
     padding-bottom: 50px;
     width: 100%;
-    background-color: #F5F7F9;
+    background-color: #ffffff;
     min-height: 100vh;
     text-align: center;
 
@@ -26,8 +26,60 @@ main {
 
 footer {
     width: 100%;
-    background-color: #0c2461;
+    background-color: #f5f7f9;
     text-align: center;
     color: #ffffff;
     height: 100vh;
 }
+
+.btn {
+    background-color: #f15045;
+    border-color: #f15045;
+
+}
+
+.btn:hover {
+    background-color:#f03221;
+    border-color: #f03221;
+}
+
+.card {
+    background-color:#f5f7f9;
+}
+
+.carouselbut {
+    display: flex;
+    position: absolute;
+    left: 33%;
+    top: 66%;
+    width: 20%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+ /* Landscape phones and down */
+@media (max-width: 480px) {
+
+    .visible-desktop {
+        visibility: hidden;
+    }
+
+    .card {
+        margin: auto;
+    }
+}
+ 
+ /* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .visible-desktop {
+        visibility: hidden;
+    }
+}
+
+ /* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+ }
