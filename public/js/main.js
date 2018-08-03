@@ -72,7 +72,6 @@ send.onclick = function send() {
                 xhr.abort();
                 swal ( "Спасибо!" ,  "Данные отправлены, скоро с Вами свяжется мастер ;)" ,  "success" );
                 username.value = '';
-                theDate.value = '';
                 tel.value = '';
                 inst.value = '';
                 message.value = '';

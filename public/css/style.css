@@ -1,6 +1,7 @@
 body {
     background-color: #ffffff;   
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 /* .col-sm {
