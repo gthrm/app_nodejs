@@ -133,6 +133,11 @@ footer {
     .visible-desktop {
         visibility: hidden;
     }
+
+    .card {
+        height: none;
+        max-height: none;
+    }
 }
 
  /* Portrait tablet to landscape and desktop */
