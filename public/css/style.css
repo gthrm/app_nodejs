@@ -3,9 +3,9 @@ body {
     width: 100%;
 }
 
-.col-sm {
+/* .col-sm {
     margin-top: 30px;
-}
+} */
 
 header {
     width: 100%;
@@ -45,6 +45,12 @@ footer {
 
 .card {
     background-color:#f5f7f9;
+    margin-bottom: 30px;
+}
+
+#write {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .carouselbut {
@@ -58,7 +64,25 @@ footer {
     align-items: center;
 }
 
+.recap {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
 
+.inputText {
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#theDate {
+        -webkit-appearance: searchfield;
+}
+
+.formSend {
+    padding: 20px;
+}
 
  /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -69,6 +93,7 @@ footer {
 
     .card {
         margin: auto;
+        margin-bottom: 30px;
     }
 }
  
