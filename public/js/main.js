@@ -3,8 +3,7 @@ let theDate = document.getElementById('theDate');
 let tel = document.getElementById('tel');
 let inst = document.getElementById('inst');
 let message = document.getElementById('message');
-
-
+let send = document.getElementById('send');
 
 send.onclick = function send() {
     

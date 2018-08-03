@@ -77,7 +77,7 @@ footer {
 }
 
 #theDate {
-        -webkit-appearance: searchfield;
+    -webkit-appearance: menulist;
 }
 
 .formSend {
