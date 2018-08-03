@@ -5,10 +5,41 @@ let inst = document.getElementById('inst');
 let message = document.getElementById('message');
 let send = document.getElementById('send');
 
-send.onclick = function send() {
-    
+username.oninput = function(){
+    if (username.value !== "") {
+        username.setAttribute("style", "text-transform: uppercase;");
+    } else {
+        username.setAttribute("style", "")
+    };
+};
 
-    if (username.value === "" || tel.value === "" || inst.value === "") {  
+theDate.oninput = function(){
+    if (theDate.value !== "") {
+        theDate.setAttribute("style", "text-transform: uppercase;");
+    } else {
+        theDate.setAttribute("style", "")
+    };
+};
+
+tel.oninput = function(){
+    if (tel.value !== "") {
+        tel.setAttribute("style", "text-transform: uppercase;");
+    } else {
+        tel.setAttribute("style", "")
+    };
+};
+
+inst.oninput = function(){
+    if (inst.value !== "") {
+        inst.setAttribute("style", "text-transform: uppercase;");
+    } else {
+        inst.setAttribute("style", "")
+    };
+};
+
+send.onclick = function send() {
+
+    if (username.value === "" || tel.value === "" || inst.value === "" || tel.value.length < 9) {  
         swal ( "Ой" ,  "Ты заполнил не все поля! :)" ,  "error" );
         return false;
 
