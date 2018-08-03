@@ -5,6 +5,14 @@ let inst = document.getElementById('inst');
 let message = document.getElementById('message');
 let send = document.getElementById('send');
 
+window.onload = function(){
+    if (window.screen.availWidth < 768) {
+        console.log(window.screen.availWidth);
+        let elem = document.getElementById('vk').parentElement;
+        let elemDel = document.getElementById('vk');
+        elem.removeChild(elemDel);
+    };
+};
 username.oninput = function(){
     if (username.value !== "") {
         username.setAttribute("style", "text-transform: uppercase;");
