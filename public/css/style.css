@@ -59,8 +59,6 @@ footer {
     position: absolute;
     left: 33%;
     top: 66%;
-    width: 20%;
-    height: 10%;
     justify-content: center;
     align-items: center;
 }
@@ -85,8 +83,20 @@ footer {
     padding: 20px;
 }
 
+.d-block {
+    object-fit: cover;
+    height: 100vh;
+}
+
  /* Landscape phones and down */
 @media (max-width: 480px) {
+
+    .carouselbut {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+    }
 
     .visible-desktop {
         visibility: hidden;
@@ -96,6 +106,12 @@ footer {
         margin: auto;
         margin-bottom: 30px;
     }
+
+    .d-block {
+        object-fit: cover;
+        height: 60vh;
+    }
+    
 }
  
  /* Landscape phone to portrait tablet */
