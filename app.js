@@ -18,7 +18,7 @@ app.get ('/', function(req, res){
 
     models.MainModel.find(function(err, data){
         if (err) throw err;
-        // console.log(data);
+        console.log(data.length); //количество записей
         res.render('index.ejs', {data: data});
     });
     
