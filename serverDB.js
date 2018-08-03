@@ -73,7 +73,7 @@ function go() {
            
         });
         go();
-    }, 3000);
+    }, 300000);
 };
 
 app.use( bodyParser.urlencoded( {extended: true } ) );
