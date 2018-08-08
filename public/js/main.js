@@ -4,6 +4,7 @@ let tel = document.getElementById('tel');
 let inst = document.getElementById('inst');
 let message = document.getElementById('message');
 let send = document.getElementById('send');
+let write = document.getElementById('write');
 
 window.onload = function(){
     if (window.screen.availWidth < 768) {
@@ -107,3 +108,13 @@ function sendData(param){
         console.log('что-то не так');
     };
 };
+
+write.onclick = function(){
+    setFocus('username');
+    return false;
+};
+
+function setFocus(param){
+    document.getElementById(''+param+'').focus();
+    return false;
+}
