@@ -87,35 +87,38 @@ app.post('/data', function(req, res){
                 console.log("Что-то не так с документом " + newClient.username);
             } else {
                 console.log(newClient.username + ' сохранен.');
-            }
-        });
-
-        models.ClientModel.find(function(err, data){
-            if (err) throw err;
-            let transporter = nodemailer.createTransport( {
-                host: 'smtp.rambler.ru',
-                port: 465,
-                secure: true,
-                auth: {
-                    user: 'sendsender@ro.ru',
-                    pass: password,
-                }
-            } );
-    
-            let actualClient = data.length - 1;
-    
-            let mailOption = {
-                from: 'sendsender@ro.ru',
-                to: 'sendsender@ro.ru',
-                subject: 'Новый клиент',
-                text: 'Имя: ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
             };
-    
-            transporter.sendMail(mailOption, function (err, info){
-                if (err) throw err;
-                console.log('Email отправлен в ' + now + ' ;' + info.response);
-            });
+            sendClientData();
         });
+        function sendClientData(){
+            models.ClientModel.find(function(err, data){
+                if (err) throw err;
+                let transporter = nodemailer.createTransport( {
+                    host: 'smtp.rambler.ru',
+                    port: 465,
+                    secure: true,
+                    auth: {
+                        user: 'sendsender@ro.ru',
+                        pass: password,
+                    }
+                } );
+        
+                let actualClient = data.length - 1;
+        
+                let mailOption = {
+                    from: 'sendsender@ro.ru',
+                    to: 'sendsender@ro.ru',
+                    subject: 'Новый клиент',
+                    text: 'Имя: ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
+                };
+        
+                transporter.sendMail(mailOption, function (err, info){
+                    if (err) throw err;
+                    console.log('Email отправлен в ' + now + ' ;' + info.response);
+                });
+            });
+        };
+
 
 
     });

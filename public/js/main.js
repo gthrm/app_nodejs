@@ -76,6 +76,9 @@ send.onclick = function send() {
                 tel.value = '';
                 inst.value = '';
                 message.value = '';
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
                 return false;
             } else {
                 console.log('Не сейчас');
