@@ -76,6 +76,7 @@ send.onclick = function send() {
                 tel.value = '';
                 inst.value = '';
                 message.value = '';
+                scrollTo(top);
                 setTimeout(() => {
                     location.reload();
                 }, 3000);
@@ -112,7 +113,6 @@ function sendData(param){
     };
 };
 
-console.log(write);
 
 write.onclick = function(){
     setFocus('username');
