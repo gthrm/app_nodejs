@@ -109,6 +109,8 @@ function sendData(param){
     };
 };
 
+console.log(write);
+
 write.onclick = function(){
     setFocus('username');
     return false;

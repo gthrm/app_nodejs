@@ -65,7 +65,7 @@ function go() {
 
                 transporter.sendMail(mailOption, function (err, info){
                     if (err) throw err;
-                    console.log('Email отправлен в' + now + ' ;' + info.response);
+                    console.log('Email отправлен в ' + now + ' ;' + info.response);
                 });
 
             } else {

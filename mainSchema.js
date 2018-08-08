@@ -3,7 +3,7 @@ module.exports = function(mongoose) {
         img: { type: String, default: '../img/no_image.png' },
         name: { type: String, default: 'Наименование' },
         text: { type: String, default: 'Текст' },
-        nameBut: { type: String, default: 'Кнопка' },
+        nameBut: { type: String, default: 'Записаться' },
         hrefBut: {type: String, default: '#'},
     } );
 
