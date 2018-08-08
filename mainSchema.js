@@ -1,3 +1,5 @@
+let now = new Date();
+
 module.exports = function(mongoose) {
     let MainSchema = new mongoose.Schema( {
         img: { type: String, default: '../img/no_image.png' },
@@ -13,6 +15,7 @@ module.exports = function(mongoose) {
     } );
 
     let ClientSchema = new mongoose.Schema( {
+        aDate: { type: Date, default: now},
         username: { type: String, default: 'client' },
         theDate: { type: Date },
         tel: { type: String, default: 'tel' },
