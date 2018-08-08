@@ -6,6 +6,11 @@ const models = require('./mainSchema')(mongoose);
 const bodyParser = require('body-parser');
 const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 const request = require('request');
+const nodemailer = require('nodemailer');
+const read = require('read');
+
+let now = new Date();
+let password;
 
 app.use( bodyParser.urlencoded( {extended: true } ) );
 app.use( bodyParser.json() );
@@ -84,6 +89,35 @@ app.post('/data', function(req, res){
                 console.log(newClient.username + ' сохранен.');
             }
         });
+
+        models.ClientModel.find(function(err, data){
+            if (err) throw err;
+            let transporter = nodemailer.createTransport( {
+                host: 'smtp.rambler.ru',
+                port: 465,
+                secure: true,
+                auth: {
+                    user: 'sendsender@ro.ru',
+                    pass: password,
+                }
+            } );
+    
+            let actualClient = data.length - 1;
+    
+            let mailOption = {
+                from: 'sendsender@ro.ru',
+                to: 'sendsender@ro.ru',
+                subject: 'Новый клиент',
+                text: 'Имя: ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
+            };
+    
+            transporter.sendMail(mailOption, function (err, info){
+                if (err) throw err;
+                console.log('Email отправлен в ' + now + ' ;' + info.response);
+            });
+        });
+
+
     });
     res.send('Данные получены: ' + username+' '+ theDate+' ' + tel + ' '+ inst + ' '+ message);
 });
@@ -179,6 +213,15 @@ app.post('/write', function(req, res){
   
     
 // });
+
+setTimeout(() => {
+    read({ prompt : 'Enter Password: ' }, function (err, pass) {
+        if (err) throw err;
+        // console.log(pass);
+        password = pass;
+        process.stdin.destroy();
+    });
+}, 2000);
 
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function() {
