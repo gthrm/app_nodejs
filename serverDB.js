@@ -8,6 +8,7 @@ const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 const request = require('request');
 const nodemailer = require('nodemailer');
 const read = require('read');
+let now = new Date();
 
 let password;
 let dataLength = 0;
@@ -59,12 +60,12 @@ function go() {
                     from: 'sendsender@ro.ru',
                     to: 'sendsender@ro.ru',
                     subject: 'Новый клиент',
-                    text: 'Имя ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
+                    text: 'Имя: ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
                 };
 
                 transporter.sendMail(mailOption, function (err, info){
                     if (err) throw err;
-                    console.log('Email отправлен ' + info.response);
+                    console.log('Email отправлен в' + now + ' ;' + info.response);
                 });
 
             } else {
