@@ -37,7 +37,7 @@
           
     </header>
     <main>
-        <h3 class="card-title">Новости и новинки</h3>
+        <h1 class="card-title">Новости и новинки</h1>
         <div class="container">
           <div class="row">
             <% for ( var i = data.length; i > 0; i-- ) { %>
@@ -60,40 +60,39 @@
           <div class="row">
             <div class="col-sm">
               <div class="card" id="write">
-                <h4>Запись к мастеру</h4>
-                <form class="formSend">
-                  
-                    <label class="card-title" for="username">Как Вас зовут?</label><br>
-                    <input type="text" class="inputText" name="username" id="username" placeholder="Петрова Александра Ивановна" /><br>
-                    <label class="card-title" for="theDate">Когда Вы хотите придти?</label><br>
-                    <input type="date" class="inputText" name="theDate" id="theDate" /><br>
-                  
-                 
-                    <label class="card-title" for="tel">Ваш номер телефона</label><br/>
-                    <input type="tel" class="inputText" name="tel" id="tel"   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="+7 (999) 999-99-00" /><br/>
-                    <label class="card-title" for="inst">Ссылка на Ваш профиль в vk.com или Instagram</label><br/>
-                    <input type="text" class="inputText" name="inst" id="inst" placeholder="instagram.com/user" /><br/>
-                
-
-                    <input type="text" class="inputText" name="message" id="message" placeholder="Комментарий" /><br/>
-
-                    <div class="recap">
-                        <div class="g-recaptcha" data-sitekey="6LdgXWcUAAAAADq4vGIGSg5e2iOBqV6ANDosKiad"></div>
-                    </div>
-                    <h6 id="rules" class="card-title">Нажимая кнопку “Записаться”, вы даёте согласие на обработку своих персональных данных</h6>
-                    <input type="button" id="send" class="btn btn-danger" value="Записаться" name="sub_but" /><br/>
+                <div class="cardInput">
+                  <h3 class="card-title">Введите данные и нажмите "Записаться"</h3>
+                  <form class="formSend">
+                    <div class="inputsText">
+                      <p class="card-title left" for="username">Ваше имя: <span class="red-star" >*</span></p>
+                      <input type="text" class="inputText" name="username" id="username" placeholder="Петрова Александра Ивановна" />
+                      <p class="card-title left" for="theDate">Желаемая дата посещения: <span class="red-star" >*</span></p>
+                      <input type="date" class="inputText" name="theDate" id="theDate" />
                     
-                </form>
-              
-                
-               
+                  
+                      <p class="card-title left" for="tel">Номер телефона: <span class="red-star" >*</span></p>
+                      <input type="tel" class="inputText" name="tel" id="tel"   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="+7 (999) 999-99-00" />
+                      <p class="card-title left" for="inst">Ссылка на Ваш профиль в vk.com или Instagram: <span class="red-star" >*</span></p>
+                      <input type="text" class="inputText" name="inst" id="inst" placeholder="instagram.com/user" />
+                  
+                      <p class="card-title left" for="message">Комментарий:</p>
+                      <input type="text" class="inputText" name="message" id="message" placeholder="Хочу единорога на один пальчик" />
+
+                      <div class="recap">
+                          <div class="g-recaptcha" data-sitekey="6LdgXWcUAAAAADq4vGIGSg5e2iOBqV6ANDosKiad"></div>
+                      </div>
+                      <h6 id="rules" class="card-title">Нажимая кнопку “Записаться”, вы даёте согласие на обработку своих персональных данных</h6>
+                      <input type="button" id="send" class="btn btn-danger" value="Записаться" name="sub_but" />
+                    </div>  
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
     </main>
     <footer>
-        <h1 class="display-2">footer</h1>
+
     </footer>
     
 

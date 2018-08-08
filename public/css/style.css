@@ -30,7 +30,7 @@ footer {
     background-color: #f5f7f9;
     text-align: center;
     color: #ffffff;
-    height: 100vh;
+    height: 50vh;
 }
 
 .btn {
@@ -71,8 +71,22 @@ footer {
     justify-content: center;
 }
 
-.inputText {
+.inputsText {
     max-width: 600px;
+    margin: auto;
+}
+
+.cardInput {
+    margin: auto;
+    width: 100%;
+}
+
+.red-star {
+    font-weight: bold;
+    color: #f15045;
+}
+
+.inputText {
     width: 100%;
     margin-bottom: 15px;
 }
@@ -100,6 +114,14 @@ footer {
     margin-bottom: 30px;
 }
 
+.card-title {
+    font-weight: bold;
+}
+
+.left {
+    text-align: left;
+}
+
  /* Landscape phones and down */
 @media (max-width: 480px) {
 
@@ -124,6 +146,12 @@ footer {
     .d-block {
         object-fit: cover;
         height: 60vh;
+    }
+
+  
+
+    footer {
+        height: 100vh;
     }
     
 }
