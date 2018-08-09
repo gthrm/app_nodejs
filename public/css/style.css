@@ -172,6 +172,10 @@ footer {
  
  /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    .d-block {
+        height: 80vh;
+    }
+
     .visible-desktop {
         visibility: hidden;
     }
