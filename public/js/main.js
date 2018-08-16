@@ -6,12 +6,18 @@ let message = document.getElementById('message');
 let send = document.getElementById('send');
 let write = document.getElementById('write');
 
+$(function(){
+    //2. Получить элемент, к которому необходимо добавить маску
+    $("#tel").mask("+7 (999) 999-99-99");
+  });
+
 window.onload = function(){
     if (window.screen.availWidth < 768) {
         console.log(window.screen.availWidth);
         let elem = document.getElementById('vk').parentElement;
         let elemDel = document.getElementById('vk');
         elem.removeChild(elemDel);
+        
     };
 };
 username.oninput = function(){
