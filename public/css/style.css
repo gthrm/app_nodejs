@@ -26,15 +26,22 @@ main {
 }
 
 footer {
-    padding-top:50px;
-    padding-bottom: 50px;
+    padding: 15px;
     width: 100%;
     background-color: #f5f7f9;
     text-align: center;
     color: #ffffff;
-    height: 50vh;
 }
 
+a {
+    text-decoration: none;
+    color: rgba(1,1,1,.6);
+}
+
+a:hover {
+    color: rgba(1,1,1,1);
+    text-decoration: none;
+}
 .btn {
     background-color: #f15045;
     border-color: #f15045;
@@ -147,22 +154,35 @@ footer {
 }
 
 .cont {
+    justify-content: center;
+   
     /* border: #f03221;
     border-radius: 5px;
     border-style: dotted; */
 }
 
 .soc {
-    border-top: 3px solid rgb(196,207,227);
+    justify-content: center;
+    border-top: 1px solid #d6d8da;
 }
 
 .bord {
-    border-left: 3px solid rgb(196,207,227);
-    border-right: 3px solid rgb(196,207,227);
+    border-left: 1px solid #d6d8da;
+    border-right: 1px solid #d6d8da;
+}
+
+.colum {
+    width: 33%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
  /* Landscape phones and down */
 @media (max-width: 480px) {
+    .columphone {
+        width: 100%;
+        margin-top: 0;
+    }
 
     .carouselbut {
         /* display: flex;
@@ -189,14 +209,15 @@ footer {
 
   
 
-    footer {
-        height: 100vh;
+    .cont {
+        padding-top: 30px;
     }
     
 }
  
  /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
     .d-block {
         height: 80vh;
     }
