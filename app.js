@@ -109,7 +109,7 @@ app.post('/data', function(req, res){
                     from: 'sendsender@ro.ru',
                     to: 'sendsender@ro.ru',
                     subject: 'Новый клиент',
-                    text: 'Имя: ' + data[actualClient].username + '; телефон: ' + data[actualClient].tel + '; вк или инст: ' + data[actualClient].inst + '; комментарий: ' + data[actualClient].message,
+                    text: 'Имя: ' + data[actualClient].username + '; Телефон: ' + data[actualClient].tel + '; Дата: ' + data[actualClient].theDate + '; Ссылка: ' + data[actualClient].inst + '; Комментарий: ' + data[actualClient].message,
                 };
         
                 transporter.sendMail(mailOption, function (err, info){
