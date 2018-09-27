@@ -98,7 +98,7 @@ app.post('/data', function(req, res){
                     port: 465,
                     secure: true,
                     auth: {
-                        user: 'andywiller@rambler.ru',
+                        user: 'andywiller',
                         pass: password,
                     }
                 } );
