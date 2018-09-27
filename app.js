@@ -98,7 +98,7 @@ app.post('/data', function(req, res){
                     port: 465,
                     secure: true,
                     auth: {
-                        user: 'sendsender@ro.ru',
+                        user: 'andywiller@rambler.ru',
                         pass: password,
                     }
                 } );
@@ -106,8 +106,8 @@ app.post('/data', function(req, res){
                 let actualClient = data.length - 1;
         
                 let mailOption = {
-                    from: 'sendsender@ro.ru',
-                    to: 'sendsender@ro.ru',
+                    from: 'andywiller@rambler.ru',
+                    to: 'andywiller@rambler.ru',
                     subject: 'Новый клиент',
                     text: 'Имя: ' + data[actualClient].username + '; Телефон: ' + data[actualClient].tel + '; Дата: ' + data[actualClient].theDate + '; Ссылка: ' + data[actualClient].inst + '; Комментарий: ' + data[actualClient].message,
                 };
