@@ -107,7 +107,7 @@ app.post('/data', function(req, res){
         
                 let mailOption = {
                     from: 'andywiller@rambler.ru',
-                    to: 'andywiller@rambler.ru',
+                    to: 'mrv24ru@yandex.ru',
                     subject: 'Новый клиент',
                     text: 'Имя: ' + data[actualClient].username + '; Телефон: ' + data[actualClient].tel + '; Дата: ' + data[actualClient].theDate + '; Ссылка: ' + data[actualClient].inst + '; Комментарий: ' + data[actualClient].message,
                 };
