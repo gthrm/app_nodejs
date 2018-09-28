@@ -91,6 +91,16 @@ a:hover {
 .carouselbut {
 }
 
+.policy {
+    border-top: 1px solid #d6d8da;
+    padding-top: 15px;
+}
+
+.bottom-text {
+    padding: 0;
+    color: #212529;
+}
+
 .padding-bottom {
     padding-bottom: 5px;
 }
