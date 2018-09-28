@@ -97,8 +97,9 @@ a:hover {
 }
 
 .bottom-text {
+    font-size: 11px;
     padding: 0;
-    color: #212529;
+    color: rgba(33, 37, 41, 0.8);
 }
 
 .padding-bottom {
