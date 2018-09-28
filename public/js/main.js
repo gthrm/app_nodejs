@@ -10,6 +10,10 @@ $(function(){
     $("#tel").mask("+7 (999) 999-99-99");
   });
 
+$(function(){
+$("#theDate").mask("30-12-2018");
+});
+
 window.onload = function(){
     if (window.screen.availWidth < 768) {
         console.log(window.screen.availWidth);
