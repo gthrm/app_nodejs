@@ -17,7 +17,7 @@ module.exports = function(mongoose) {
     let ClientSchema = new mongoose.Schema( {
         aDate: { type: String, default: now},
         username: { type: String, default: 'client' },
-        theDate: { type: Date },
+        theDate: { type: String },
         tel: { type: String, default: 'tel' },
         inst: { type: String, default: 'inst' },
         message: { type: String, default: 'Комментарий' },
