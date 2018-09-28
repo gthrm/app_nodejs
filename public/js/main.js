@@ -7,7 +7,6 @@ let send = document.getElementById('send');
 let write = document.getElementById('write');
 
 $(function(){
-    //2. Получить элемент, к которому необходимо добавить маску
     $("#tel").mask("+7 (999) 999-99-99");
   });
 

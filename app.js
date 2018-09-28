@@ -8,6 +8,7 @@ const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 const request = require('request');
 const nodemailer = require('nodemailer');
 const read = require('read');
+const port = 80;
 
 let now = new Date();
 let password;
@@ -98,7 +99,7 @@ app.post('/data', function(req, res){
                     port: 465,
                     secure: true,
                     auth: {
-                        user: 'andywiller',
+                        user: 'andywiller@rambler.ru',
                         pass: password,
                     }
                 } );
@@ -226,7 +227,7 @@ setTimeout(() => {
     });
 }, 2000);
 
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || port));
 app.listen(app.get('port'), function() {
     console.log('Сервер запущен на порту '+app.get('port'));
 });
