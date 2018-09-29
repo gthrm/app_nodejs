@@ -27,11 +27,11 @@ app.get ('/', function(req, res){
         console.log(data.length); //количество записей
         res.render('index.ejs', {data: data});
     });
-    // let ip = req.headers['x-forwarded-for'] || 
-    //  req.connection.remoteAddress || 
-    //  req.socket.remoteAddress ||
-    //  (req.connection.socket ? req.connection.socket.remoteAddress : null);
-    //  ipGetter(ip);
+    let ip = req.headers['x-forwarded-for'] || 
+     req.connection.remoteAddress || 
+     req.socket.remoteAddress ||
+     (req.connection.socket ? req.connection.socket.remoteAddress : null);
+     ipGetter(ip);
 });
 
 app.post ('/capcha', function(req, res){
