@@ -239,7 +239,8 @@ function ipGetter(data){
     mongoose.connect(dbSite, function(err, noerr){
         if (err) throw err;
         let newIP = new models.IpModel ({
-            IP: data
+            IP: data,
+            aDate: new Date()
         });
         newIP.save(function(err, newIP){
             if (err) {
