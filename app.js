@@ -246,7 +246,7 @@ function ipGetter(data){
             if (err) {
                 console.log("Что-то не так с документом " + newIP);
             } else {
-                console.log('IP сохранен');
+                console.log('IP сохранен в ', new Date());
             }
         });
     });
