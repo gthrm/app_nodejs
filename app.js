@@ -8,7 +8,7 @@ const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 const request = require('request');
 const nodemailer = require('nodemailer');
 const read = require('read');
-const port = 8080;
+const port = 80;
 
 let now = new Date();
 let password;
