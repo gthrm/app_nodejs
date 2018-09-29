@@ -1,0 +1,11 @@
+{
+    "serverPort": "80",
+    "passMail": "",
+    "db": {
+        "username": "",
+        "pass": "",
+        "host": "",
+        "port": "",
+        "name": ""
+    }
+}

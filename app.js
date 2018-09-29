@@ -4,14 +4,22 @@ const mongoose = require('mongoose');
 const path = require('path');
 const models = require('./mainSchema')(mongoose);
 const bodyParser = require('body-parser');
-const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
+
+const config = require('./etc/config.json');
+const dbUser = config.db.username;
+const dbPass = config.db.pass;
+const dbHost = config.db.host;
+const dbPort = config.db.port;
+const dbName = config.db.name;
+
+const dbSite = `mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}`;
 const request = require('request');
 const nodemailer = require('nodemailer');
 const read = require('read');
-const port = 80;
+const port = config.serverPort;
 
 let now = new Date();
-let password;
+let password = config.passMail;
 
 app.use( bodyParser.urlencoded( {extended: true } ) );
 app.use( bodyParser.json() );
@@ -222,14 +230,14 @@ app.post('/write', function(req, res){
     
 // });
 
-setTimeout(() => {
-    read({ prompt : 'Enter Password: ' }, function (err, pass) {
-        if (err) throw err;
-        // console.log(pass);
-        password = pass;
-        process.stdin.destroy();
-    });
-}, 2000);
+// setTimeout(() => {
+//     read({ prompt : 'Enter Password: ' }, function (err, pass) {
+//         if (err) throw err;
+//         // console.log(pass);
+//         password = pass;
+//         process.stdin.destroy();
+//     });
+// }, 2000);
 
 function ipGetter(data){
     console.log('====================================');
