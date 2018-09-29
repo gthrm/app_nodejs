@@ -8,7 +8,7 @@ const dbSite = 'mongodb://adminuser:admin123@ds247191.mlab.com:47191/nail';
 const request = require('request');
 const nodemailer = require('nodemailer');
 const read = require('read');
-const port = 80;
+const port = 8080;
 
 let now = new Date();
 let password;
@@ -27,7 +27,11 @@ app.get ('/', function(req, res){
         console.log(data.length); //количество записей
         res.render('index.ejs', {data: data});
     });
-    
+    let ip = req.headers['x-forwarded-for'] || 
+     req.connection.remoteAddress || 
+     req.socket.remoteAddress ||
+     (req.connection.socket ? req.connection.socket.remoteAddress : null);
+     ipGetter(ip);
 });
 
 app.post ('/capcha', function(req, res){
@@ -226,6 +230,12 @@ setTimeout(() => {
         process.stdin.destroy();
     });
 }, 2000);
+
+function ipGetter(data){
+    console.log('====================================');
+    console.log('IP: ', data);
+    console.log('====================================');
+};
 
 app.set('port', (process.env.PORT || port));
 app.listen(app.get('port'), function() {
