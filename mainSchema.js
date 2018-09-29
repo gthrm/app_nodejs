@@ -23,11 +23,17 @@ module.exports = function(mongoose) {
         message: { type: String, default: 'Комментарий' },
     } );
 
+    let IpSchema = new mongoose.Schema( {
+        IP: { type: String, default: 'IP' },
+        aDate: { type: String, default: now},
+    } );
+
 
     let models = {
         MainModel: mongoose.model('mains', MainSchema),
         UserModel: mongoose.model('users', UserSchema),
         ClientModel: mongoose.model('clients', ClientSchema),
+        IpModel: mongoose.model('ips', IpSchema)
     };
     return models;
 };

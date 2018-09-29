@@ -235,6 +235,20 @@ function ipGetter(data){
     console.log('====================================');
     console.log('IP: ', data);
     console.log('====================================');
+    
+    mongoose.connect(dbSite, function(err, noerr){
+        if (err) throw err;
+        let newIP = new models.IpModel ({
+            IP: data
+        });
+        newIP.save(function(err, newIP){
+            if (err) {
+                console.log("Что-то не так с документом " + newIP);
+            } else {
+                res.send(newIP.IP +' сохранен.');
+            }
+        });
+    });
 };
 
 app.set('port', (process.env.PORT || port));
